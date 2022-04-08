@@ -1,0 +1,393 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <title>לוח משמרות - מנהל</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="Common.css">
+
+    <style>
+h2.extrn{
+    margin-bottom: 0;
+    background-color: black;
+    opacity: 0.8;
+    color: red;
+}
+div.bottom{
+    margin-top: 50px;
+    float:left;
+    margin-left: 70%;
+    width: 300px;
+    text-align: right;
+}
+
+        div.wrap {
+            margin-right: 10%;
+            width: auto;
+        }
+
+
+        label.head {
+            font-size: 26px;
+        }
+
+        label.hour {
+            font-size: 22px;
+        }
+
+        input.checkbox {
+            margin-right: 20px;
+        }
+
+        th {
+            width: 20%;
+            text-align: center;
+            padding-right: 40px;
+            padding-left: 40px;
+            border-bottom: solid;
+            border-left: solid;
+        }
+
+        table {
+            float: left;
+            margin-top: 50px;
+            border: solid;
+            border-bottom: none;
+            border-left: none;
+        }
+
+        h4 {
+            margin-top:0;
+            margin-bottom: 0;
+            font-size: 22px;
+            text-decoration: underline;
+        }
+        h5{
+            margin-top: 0px;
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+        div.wrap {
+    background-color: rgba(255, 255, 255, 0.6);
+    display: block;
+    float: left;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 7%;
+    margin-bottom: 10%;
+    width: fit-content;
+    height: fit-content;
+    padding: 5%;
+    padding-bottom: 2%;
+}
+    </style>
+
+    
+  </head>
+  <body onload="welcome()">
+
+    <h1 class="main" id="headline"></h1>
+    <div class="wrap">
+        <h3 class="sub" id="rank"></h3>
+        <br/>
+        <br/>
+        <h2><u>לוח משמרות לשבוע נוכחי</h2></u>
+
+        
+        <table onload="putInfo()">
+            <tr>
+                <th>שבת</th>
+                <th>שישי</th>
+                <th>חמישי</th>
+                <th>רביעי</th>
+                <th>שלישי</th>
+                <th>שני</th>
+                <th>ראשון</th>
+                <th>שעה/יום</th>
+            </tr>
+            <tr>
+                <th>
+                    <h4 id="Sut">10:00</h4>
+                    <h5 id="60">
+                        עומר<input type="checkbox"/><br/>
+                        יעל<input type="checkbox"/><br/>
+                       
+                    </h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="61">
+                        שני<input type="checkbox"/><br/>
+                        לאה<input type="checkbox"/><br/>
+                        עומר<input type="checkbox"/><br/>
+                        יעל<input type="checkbox"/><br/>
+                        בן<input type="checkbox"/><br/>
+                        אורי<input type="checkbox"/><br/>
+                    </h5>
+                    <h4>12:00</h4>
+                    <h5 id="62">
+                        אורי<input type="checkbox"/><br/>
+                        נסטיה<input type="checkbox"/><br/>
+                        בן<input type="checkbox"/><br/>
+                    <br />
+
+                </th>
+                <th id="Fri">
+                    <h4>10:00</h4>
+                    <h5 id="50">
+                        ליזה<input type="checkbox"/><br/>
+                        הודיה<input type="checkbox"/><br/>
+                        עומר<input type="checkbox"/><br/>
+                        שחר<input type="checkbox"/><br/>
+
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="51">
+                        בן<input type="checkbox"/><br/>
+                        אור<input type="checkbox"/><br/>
+                        וובה<input type="checkbox"/><br/>
+                        ליאור<input type="checkbox"/><br/>
+                        הודיה<input type="checkbox"/><br/>
+
+                    </h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="52">
+                        אור<input type="checkbox"/><br/>
+                        וובה<input type="checkbox"/><br/>
+                        </h5>
+                    <br />
+
+                </th>
+                <th id="Thu">
+                    <h4>10:00</h4>
+                    <h5 id="40">
+                        שחר<input type="checkbox"/><br/>
+                        דימה<input type="checkbox"/><br/>
+                        ליאור<input type="checkbox"/><br/>
+                        נסטיה<input type="checkbox"/><br/>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="41">
+                        
+                        שני<input type="checkbox"/><br/>
+                        הודיה<input type="checkbox"/><br/>
+                    <h4>12:00</h4>
+                    <h5 id="42">
+                        יאיר<input type="checkbox"/><br/>
+                        ליזה<input type="checkbox"/><br/>
+                </th>
+                <th id="Wed">
+                    <h4>10:00</h4>
+                    <h5 id="30">
+                        שני<input type="checkbox"/><br/>
+                        </h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="31">
+                        וובה<input type="checkbox"/><br/>
+                        </h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="32">
+                        סהר<input type="checkbox"/><br/>
+                        ליזה<input type="checkbox"/><br/>
+                        יעל<input type="checkbox"/><br/>                        
+                        </h5>
+
+                </th>
+                <th id="Tue">
+                    <h4>10:00</h4>
+                    <h5 id="20">
+                        בן<input type="checkbox"/><br/>
+                        עדי<input type="checkbox"/><br/>
+                        מתן<input type="checkbox"/><br/>
+                        </h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="21">
+                        בן<input type="checkbox"/><br/>
+                        קורל<input type="checkbox"/><br/>
+                        רוז<input type="checkbox"/><br/>
+                        עדי<input type="checkbox"/><br/>
+                        </h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="22">
+                        בן<input type="checkbox"/><br/>
+                        סהר<input type="checkbox"/><br/>
+                        יאיר<input type="checkbox"/><br/>
+                        </h5>
+                    <br />
+
+                </th>
+                <th id="Mon">
+                    <h4>10:00</h4>
+                    <h5 id="10">
+                        בן<input type="checkbox"/><br/>
+                        עומר<input type="checkbox"/><br/>
+                        ניב<input type="checkbox"/><br/>
+                       </h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="11">
+                        ניב<input type="checkbox"/><br/>
+                        קורל<input type="checkbox"/><br/>
+                        משה<input type="checkbox"/><br/>
+                        </h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="12">
+                        סהר<input type="checkbox"/><br/>
+                        יאיר<input type="checkbox"/><br/>
+                        דניאל<input type="checkbox"/><br/>
+                        
+
+                    </h5>
+                    <br />
+
+                </th>
+                <th id="Sun">
+                    <h4>10:00</h4>
+                    <h5 id="00">
+                        סהר<input type="checkbox"/><br/>
+                        בן<input type="checkbox"/><br/>
+                        </h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="01">
+                        רוז<input type="checkbox"/><br/>
+                        ליזה<input type="checkbox"/><br/>
+                       </h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="02">
+                        רוז<input type="checkbox"/><br/>
+                        
+                    </h5>
+                    <br />
+                    
+                </th>
+
+                <th><label class="head">משמרת בוקר</label></th>
+            </tr>
+            <tr>
+                <th>
+                    <h5 id="63">
+                        קורל<input type="checkbox"/><br/>
+                        אנסטסיה<input type="checkbox"/><br/>
+                        אור<input type="checkbox"/><br/>
+                        דימה<input type="checkbox"/><br/>
+                        שני<input type="checkbox"/><br/>
+                        יאיר<input type="checkbox"/><br/>
+                        וובה<input type="checkbox"/><br/>
+                        רוז<input type="checkbox"/><br/>
+                        עדי<input type="checkbox"/><br/>
+                        ליאור<input type="checkbox"/><br/>
+                        </h5>
+
+                </th>
+                <th>
+                    <h5 id="53">
+
+                        אור<input type="checkbox"/><br/>
+                        צאצא<input type="checkbox"/><br/>
+                        אנסטסיה<input type="checkbox"/><br/>
+                        קורל<input type="checkbox"/><br/>
+                        בן<input type="checkbox"/><br/>
+                        לידור<input type="checkbox"/><br/>
+                        טניה<input type="checkbox"/><br/>
+                        אופיר<input type="checkbox"/><br/>
+                        ליזה<input type="checkbox"/><br/>
+                        גלב<input type="checkbox"/><br/>
+                        הדר<input type="checkbox"/><br/>
+                        עדי<input type="checkbox"/><br/>
+
+                    </h5>
+                </th>
+                <th>
+                    <h5 id="43">
+                        קורל<input type="checkbox"/><br/>
+                        ליזה<input type="checkbox"/><br/>
+                        לידור<input type="checkbox"/><br/>
+                        גלב<input type="checkbox"/><br/>
+                        ליאור<input type="checkbox"/><br/>
+                        הודיה<input type="checkbox"/><br/>
+                        אור<input type="checkbox"/><br/>
+                        וובה<input type="checkbox"/><br/>
+                    
+                    </h5>
+                </th>
+                <th>
+                    <h5 id="33">
+                        עומר<input type="checkbox"/><br/>
+                        וובה<input type="checkbox"/><br/>
+                        ניב<input type="checkbox"/><br/>
+                        קורל<input type="checkbox"/><br/>
+                        אור<input type="checkbox"/><br/>
+                        הודיה<input type="checkbox"/><br/>
+                    </h5>
+                </th>
+                <th>
+                    <h5 id="23">
+                        ניב<input type="checkbox"/><br/>
+                        עדי<input type="checkbox"/><br/>
+                        עומר<input type="checkbox"/><br/>
+                        דניאל<input type="checkbox"/><br/>
+                        גלב<input type="checkbox"/><br/>
+                        שני<input type="checkbox"/><br/>
+                    </h5>
+                </th>
+                <th>
+                    <h5 id="13">
+                        יאיר<input type="checkbox"/><br/>
+                        עדי<input type="checkbox"/><br/>
+                        ניב<input type="checkbox"/><br/>
+                        שני<input type="checkbox"/><br/>
+                    </h5>
+                </th>
+                <th>
+                    <h5 id="03">
+                        <b>אין פריטים להצגה</b>
+                    </h5>
+                </th>
+                <th> <label class="head">משמרת ערב</label></th>
+            </tr>
+            
+            
+        </table>
+        <div class="bottom">
+            <h3 class="commentsHead">הערות</h3><br/>
+            <p>יום שלישי - בן: מעדיף להתחיל ב10
+                <br/>
+                יום שלישי - אור: זה עובד??? חחח
+                <br/>
+                יום שבת - עומר:  שחרור מוקדם 
+            </p>
+
+        </div>
+        <div class="bottom">
+            <h2 class="extrn">חריגות</h2>
+            <p><b>:המערכת מצאה חריגות בימים הבאים
+                <br/>
+                ראשון - בוקר
+                <br/>
+                ראשון - ערב
+                <br/>
+                שלישי - בוקר
+               
+                
+            </b><br/>
+            המערכת לא מצאה התאמות אפשריות
+            </p>
+
+        </div>
+        <div class="bottom-left">
+            <button onclick="publish()">לחץ לפרסום הסידור</button>
+        </div>
+    </div>
+    <script src="FirstScript.js"></script>
+
+
+</body>
+</html>

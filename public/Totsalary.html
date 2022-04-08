@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <title>דוח טיפים</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+
+    <link rel="stylesheet" href="Common.css">
+    <style>
+
+
+th {
+    width: 20%;
+    font-size: 20px;
+    border-bottom: solid;
+    border-left: solid;
+}
+.TableHead{
+    font-size: 28px;
+}
+table {
+    float: left;
+    margin-top: 50px;
+    text-align: center;
+    border: solid;
+    border-bottom: none;
+    border-left: none;
+}
+        button {
+            background-color:lightseagreen;
+            font-size: 22px;
+            width: 20%;
+            font-family: Calibri;
+        }
+        button:hover{
+            background-color: skyblue;
+        }
+    </style>
+<script src="FirstScript.js"></script>
+
+  </head>
+  <body onload="welcome()">
+
+    <h1 class="main" id="headline"></h1>        
+
+    <div class="wrap">
+        <h3 class="sub" id="rank"></h3><br/>
+            <h2>בדף זה תוכל לצפות בסך הטיפים </h2>
+            <input type="date" id="shiftDate"  value="2022-02-20"  min="2022-01-01" max="2025-12-31">
+            <label for="date">בחר תאריך</label>
+            <br/>
+            <button placeholder="לחץ לאישור" onclick="ShowSalary()">סנן</button>
+            <table id="salaryTabel">
+                <tr>
+                    <th class="TableHead">שכר למשמרת</th>
+                    <th class="TableHead">משמרת</th>
+                    <th class="TableHead">תאריך</th>
+                </tr>
+                
+            </table>
+
+    </div>
+    
+
+
+</body>
+</html>

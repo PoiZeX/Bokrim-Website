@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+
+    <title>תשלום ארוחה</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="Common.css">
+    <style>
+
+        button {
+            float: left;
+            width: 300px;
+        }
+        h2{
+            font-size: 30px;
+        }
+    </style>
+    
+  </head>
+  <body onload="welcome()"">
+    <h1 class="main" id="headline"></h1>
+
+    <div class="wrap">
+        <h3 class="sub"></h3>
+
+        <h2>
+            ,עובד / מנהל יקר<br />
+            בדף זה ישנה אפשרות לשלם עבור<br/>
+            .ארוחה במסעדה במסגרת העבודה
+            <br /><br />
+        </h2>
+        <h3>
+            .בלבד paypal כרגע התשלום יתבצע באמצעות מערכת<br />
+            :נא וודאו מול המנהל את הסכום המדויק לתשלום והזינו אותו
+
+        </h3><br/><br/><br/>
+        <input type="number" id="paypalCash" placeholder="הכנס סכום לתשלום" min="0" />
+
+        <br /><br /><br />
+
+
+
+        <div id="paypal-button-container"></div>
+
+        <!-- Include the PayPal JavaScript SDK -->
+        <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+
+        <script>
+            // Render the PayPal button into #paypal-button-container
+            paypal.Buttons({
+
+                // Set up the transaction
+                createOrder: function (data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: document.getElementById('paypalCash').value
+                            }
+                            
+                        }]
+                    });
+                },
+
+                // Finalize the transaction
+                onApprove: function (data, actions) {
+                    return actions.order.capture().then(function (orderData) {
+                        // Successful capture! 
+                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));  // for me
+                        var transaction = orderData.purchase_units[0].payments.captures[0];
+                        alert('Transaction ' + transaction.status + ': ' + transaction.id + '\n\nתודה!');
+
+                    });
+                }
+
+
+            }).render('#paypal-button-container');
+        </script>
+
+
+
+
+
+
+
+    </div>
+    <script src="FirstScript.js"></script>
+
+
+</body>
+</html>

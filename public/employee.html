@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <title>פעולות עובד</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="Common.css">
+    <style>
+
+        button {
+            float: left;
+            width: 300px;
+        }
+        button.enter {
+            margin-top:70px;
+        font-size: 22px;
+        }
+        button.exit {
+            margin-top:70px;
+        font-size: 22px;
+        }
+    </style>  </head>
+  <body onload="welcome()">
+
+    <h1 class="main" id="headline"></h1>
+    <div class="wrap">
+        <h3 class="sub" id="rank"></h3><br/>
+        <h2>לוח פעולות עובד</h2>
+        <h3 class="sub">אנא בחר פעולה לביצוע</h3>
+        <br/><br/><br/>
+
+        
+        <a href = "settings.html"><button type="button" class="settings"> הגדרות חשבון <img src="settings.png" width="20" height="20" /> </button></a>
+        <button type="button" class="quit" onclick="quit()"> התנתקות מהחשבון </button>
+
+        <br /><br /><br /><br />
+
+                          <div class="center">
+                              <a href="upload.html">
+                                  <a href="Shifts.html"><button type="button"> הזנת משמרות </button><br /></a>
+                                  <a href="Allshifts.html"><button type="button"> צפייה בלוח משמרות </button><br /></a>
+                                  <a href="salary-emp.html"><button type="button"> הזנת דוח יומי </button><br /></a>
+                                  <a href="paycheck.html"><button type="button"> תלושי שכר </button><br /></a>
+                                  <a href="mealPay.html"> <button type="button"> תשלום ארוחה </button><br /></a>
+</div>
+
+<button type="button" class="exit" onclick="shiftAct('1')">יציאה ממשמרת</button>
+<button type="button" class="enter" onclick="shiftAct('0')">כניסה למשמרת</button>
+
+    </div>
+    <script src="login.js"></script>
+    <script src="FirstScript.js"></script>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <title>לוח משמרות - מנהל</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="Common.css">
+
+    <style>
+
+        div.wrap {
+            margin-right: 10%;
+            width: auto;
+        }
+
+
+        label.head {
+            font-size: 26px;
+        }
+
+        label.hour {
+            font-size: 22px;
+        }
+
+        input.checkbox {
+            margin-right: 20px;
+        }
+
+        th {
+            width: 20%;
+            text-align: center;
+            padding-right: 40px;
+            padding-left: 40px;
+            border-bottom: solid;
+            border-left: solid;
+        }
+
+        table {
+            float: left;
+            margin-top: 50px;
+            border: solid;
+            border-bottom: none;
+            border-left: none;
+        }
+
+        h4 {
+            margin-top:0;
+            margin-bottom: 0;
+            font-size: 22px;
+            text-decoration: underline;
+        }
+        h5{
+            margin-top: 0px;
+            margin-bottom: 0;
+            font-size: 18px;
+        }
+        div.wrap {
+    background-color: rgba(255, 255, 255, 0.6);
+    display: block;
+    float: left;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 7%;
+    margin-bottom: 10%;
+    width: fit-content;
+    height: fit-content;
+    padding: 5%;
+    padding-bottom: 2%;
+}
+    </style>
+
+    
+  </head>
+  <body onload="welcome()">
+
+    <h1 class="main" id="headline"></h1>
+    <div class="wrap">
+        <h3 class="sub" id="rank"></h3>
+        <br/>
+        <br/>
+        <h2><u>לוח משמרות לשבוע נוכחי</h2></u>
+
+        
+        <table onload="putInfo()">
+            <tr>
+                <th>שבת</th>
+                <th>שישי</th>
+                <th>חמישי</th>
+                <th>רביעי</th>
+                <th>שלישי</th>
+                <th>שני</th>
+                <th>ראשון</th>
+                <th>שעה/יום</th>
+            </tr>
+            <tr>
+                <th>
+                    <h4 id="Sut">10:00</h4>
+                    <h5 id="60">עומר<br>יעל</h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="61">שני<br>לאה</h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="62">בן<br>אורי<br>נסטיה</h5>
+                    <br />
+
+                </th>
+                <th id="Fri">
+                    <h4>10:00</h4>
+                    <h5 id="50">ליזה<br>הודיה</h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="51">עומר<br>שחר<br></h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="52">וובה<br>אור</h5>
+                    <br />
+
+                </th>
+                <th id="Thu">
+                    <h4>10:00</h4>
+                    <h5 id="40">דימה<br>שחר</h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="41">הודיה<br>שני</h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="42">יאיר<br>ליזה</h5>
+                    <br />
+
+                </th>
+                <th id="Wed">
+                    <h4>10:00</h4>
+                    <h5 id="30">הודיה<br>שני</h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="31">וובה</h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="32">סהר<br>ליזה<br>נסטיה</h5>
+                    <br />
+
+                </th>
+                <th id="Tue">
+                    <h4>10:00</h4>
+                    <h5 id="20">עדי<br>לידור</h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="21">דניאל<br>קורל</h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="22">סהר<br>יאיר</h5>
+                    <br />
+
+                </th>
+                <th id="Mon">
+                    <h4>10:00</h4>
+                    <h5 id="10">הודיה<br>עומר</h5>
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="11">ניב<br>קורל</h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="12">סהר</h5>
+                    <br />
+
+                </th>
+                <th id="Sun">
+                    <h4>10:00</h4>
+                    <h5 id="00">סהר<br>דניאל</h5>
+
+                    <br />
+                    <h4>11:00</h4>
+                    <h5 id="01">קורל<br>ליזה</h5>
+                    <br />
+                    <h4>12:00</h4>
+                    <h5 id="02">הודיה</h5>
+                    <br />
+                    
+                </th>
+
+                <th><label class="head">משמרת בוקר</label></th>
+            </tr>
+            <tr>
+                <th>
+                    <h5 id="63">קורל<br>אנסטסיה<br>אור<br>דימה<br>שני<br>יאיר<br>וובה</h5>
+
+                </th>
+                <th>
+                    <h5 id="53">אור<br>צאצא<br>אנסטסיה<br>קורל<br>גלב<br>ליזה</h5>
+                </th>
+                <th>
+                    <h5 id="43">קורל<br>אנסטסטיה<br>גלב<br>אור<br>ליזה<br>וובה</h5>
+                </th>
+                <th>
+                    <h5 id="33">עומר<br>ניב<br>וובה<br>אור<br>קורל<br>הודיה</h5>
+                </th>
+                <th>
+                    <h5 id="23">שני<br>מתן<br>לידור<br>עדי<br>דניאל<br>גלב</h5>
+                </th>
+                <th>
+                    <h5 id="13">שני<br>עדי<br>ניב<br>יאיר</h5>
+                </th>
+                <th>
+                    <h5 id="03">הודיה<br>ליזה<br>שחר<br>לאה</h5>
+                </th>
+                <th> <label class="head">משמרת ערב</label></th>
+            </tr>
+            
+            
+        </table>
+
+    </div>
+    <script src="FirstScript.js"></script>
+
+
+</body>
+</html>

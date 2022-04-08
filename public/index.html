@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>סטקיית הבוקרים</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <style>
+      body {
+          background-image: url(3.jpg);
+          background-color: lightblue;
+          text-align: center;
+          background-size: cover;
+          font-family: Calibri;
+      }
+ 
+      h1 {
+          font-size: 46px;
+      }
+ 
+          h1.main {
+              color: black;
+              text-align: center;
+              background-color: rgba(255, 255, 255, 0.8);
+              text-shadow: 20px;
+          }
+ 
+      div.wrap {
+          background-color: rgba(255, 255, 255, 0.6);
+          display: inline-block;
+          padding: 40px 100px;
+          width: 50%;
+      }
+      div.diff{
+          padding-left: 25%;
+          width: 50%;
+      }
+      h2 {
+          color: black;
+          text-align: center;
+          font-size: 36px;
+      }
+ 
+      p {
+          font-family: Arial;
+          font-size: 20px;
+      }
+ 
+      input {
+          text-align: right;
+      }
+ 
+      label {
+          font-size: 26px;
+      }
+ 
+      button {
+          background-color: blueviolet;
+          color: white;
+          padding: 7px 10px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 70%;
+          font-size: 32px;
+          border-radius: 25px;
+      }
+ 
+          button:hover {
+              opacity: 0.8;
+          }
+ 
+ 
+     </style>
+     
+        <script src="login.js"></script>
+        <script src="FirstScript.js"></script>
+
+  </head>
+  <body onload="reDirect()">
+    <h1 class="main">!ברוך הבא</h1>
+    <div class="wrap">
+        <h1>אנא התחבר למערכת</h1>
+
+        <h3>לרשותך 2 אפשרויות להתחברות<br>
+        התחברות באמצעות שם משתמש וסיסמה שהופק ע"י מנהל המסעדה<br>
+        או התחברות באמצעות חשבון גוגל
+        </h3>
+
+        <div class="diff">
+                <input type="text" placeholder="הכנס שם משתמש" name="username" id="username" required>
+                <br />
+                <input type="password" placeholder="הכנס סיסמה" name="psw" id="psw" required>
+                <br />
+                <input type="text" placeholder="input OTP" name="OTP" id="OTP" style="display:none" />
+                <br />
+                <b>OTP-אפשרות להתחבר ב</b>
+                <input type="checkbox" id="checkOTP" onclick="toggleHide()"><br />
+                <p id="loadingMsg"></p>
+                <h3>
+                    זכור אותי
+                    <input type="checkbox" checked="checked" name="remember">
+                </h3>
+                <button type="submit" onclick="LoginAttempt()">התחברות</button>
+                
+                <br>
+                <label>או</label>
+                <br>
+                <button onclick="googleLogin()">Google התחבר באמצעות חשבון </button>
+
+            
+        </div>
+    </div>
+    
+  </body>
+</html>

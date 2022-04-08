@@ -1,0 +1,147 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <link rel="stylesheet" href="Common.css">
+    <title>הגשת משמרות</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+    <style>
+
+
+        label.head {
+            font-size: 22px;
+        }
+
+        label.hour {
+            font-size: 16px;
+        }
+
+        input.checkbox {
+            margin-right: 20px;
+        }
+
+        th {
+            width: 20%;
+            text-align: right;
+            padding-right: 20px;
+            border-bottom: solid;
+            border-left: solid;
+        }
+
+        table {
+            float: left;
+            margin-top: 50px;
+            border: solid;
+            border-bottom: none;
+            border-left: none;
+        }
+    </style>
+
+    
+  </head>
+  <body onload="welcome()">
+
+    <h1 class="main" id="headline"></h1>
+    <div class="wrap">
+        <h3 class="sub" id="rank"></h3>
+
+        <table>
+            <tr>
+                <th>הערות</th>
+                <th>שעה</th>
+                <th>יום</th>
+            </tr>
+            <tr>
+                <th><input type="text" id="comments1" /></th>
+                <th>
+                    <label class="head">משמרת בוקר</label><input type="checkbox" onclick="checkall(this, 1)" /><br />
+                    <label class="hour">10:00</label><input type="checkbox" class="checkbox" placeholder="10:00" name="1" /><br />
+                    <label class="hour">11:00</label><input type="checkbox" class="checkbox" placeholder="11:00" name="1" /><br />
+                    <label class="hour">12:00</label><input type="checkbox" class="checkbox" placeholder="12:00" name="1" /><br />
+                    <label class="head">:משמרת ערב</label><br />
+                    <label class="hour">18:00</label><input type="checkbox" name="eve1" class="checkbox" placeholder="18:00" /><br />
+                </th>
+                <th>ראשון</th>
+            </tr>
+            <tr>
+                <th><input type="text" id="comments2" /></th>
+                <th>
+                    <label class="head">משמרת בוקר</label><input type="checkbox" onclick="checkall(this, 2)" /><br />
+                    <label class="hour">10:00</label><input type="checkbox" class="checkbox" placeholder="10:00" name="2" /><br />
+                    <label class="hour">11:00</label><input type="checkbox" class="checkbox" placeholder="11:00" name="2" /><br />
+                    <label class="hour">12:00</label><input type="checkbox" class="checkbox" placeholder="12:00" name="2" /><br />
+                    <label class="head">:משמרת ערב</label><br />
+                    <label class="hour">18:00</label><input type="checkbox" name="eve2" class="checkbox" placeholder="18:00" /><br />
+                </th>
+                <th>שני</th>
+            </tr>
+            <tr>
+                <th><input type="text" id="comments3" /></th>
+                <th>
+                    <label class="head">משמרת בוקר</label><input type="checkbox" onclick="checkall(this, 3)" /><br />
+                    <label class="hour">10:00</label><input type="checkbox" class="checkbox" placeholder="10:00" name="3" /><br />
+                    <label class="hour">11:00</label><input type="checkbox" class="checkbox" placeholder="11:00" name="3" /><br />
+                    <label class="hour">12:00</label><input type="checkbox" class="checkbox" placeholder="12:00" name="3" /><br />
+                    <label class="head">:משמרת ערב</label><br />
+                    <label class="hour">18:00</label><input type="checkbox" name="eve3" class="checkbox" placeholder="18:00" /><br />
+                </th>
+                <th>שלישי</th>
+            </tr>
+            <tr>
+                <th><input type="text" id="comments4" /></th>
+                <th>
+                    <label class="head">משמרת בוקר</label><input type="checkbox" onclick="checkall(this, 4)" /><br />
+                    <label class="hour">10:00</label><input type="checkbox" class="checkbox" placeholder="10:00" name="4" /><br />
+                    <label class="hour">11:00</label><input type="checkbox" class="checkbox" placeholder="11:00" name="4" /><br />
+                    <label class="hour">12:00</label><input type="checkbox" class="checkbox" placeholder="12:00" name="4" /><br />
+                    <label class="head">:משמרת ערב</label><br />
+                    <label class="hour">18:00</label><input type="checkbox" name="eve4" class="checkbox" placeholder="18:00" /><br />
+                </th>
+                <th>רביעי</th>
+            </tr>
+            <tr>
+                <th><input type="text" id="comments5" /></th>
+                <th>
+                    <label class="head">משמרת בוקר</label><input type="checkbox" onclick="checkall(this, 5)" /><br />
+                    <label class="hour">10:00</label><input type="checkbox" class="checkbox" placeholder="10:00" name="5" /><br />
+                    <label class="hour">11:00</label><input type="checkbox" class="checkbox" placeholder="11:00" name="5" /><br />
+                    <label class="hour">12:00</label><input type="checkbox" class="checkbox" placeholder="12:00" name="5" /><br />
+                    <label class="head">:משמרת ערב</label><br />
+                    <label class="hour">18:00</label><input type="checkbox" name="eve5" class="checkbox" placeholder="18:00" /><br />
+                </th>
+                <th>חמישי</th>
+            </tr>
+            <tr>
+                <th><input type="text" id="comments6" /></th>
+                <th>
+                    <label class="head">משמרת בוקר</label><input type="checkbox" onclick="checkall(this, 6)" /><br />
+                    <label class="hour">10:00</label><input type="checkbox" class="checkbox" placeholder="10:00" name="6" /><br />
+                    <label class="hour">11:00</label><input type="checkbox" class="checkbox" placeholder="11:00" name="6" /><br />
+                    <label class="hour">12:00</label><input type="checkbox" class="checkbox" placeholder="12:00" name="6" /><br />
+                    <label class="head">:משמרת ערב</label><br />
+                    <label class="hour">18:00</label><input type="checkbox" name="eve6" class="checkbox" placeholder="18:00" /><br />
+                </th>
+                <th>שישי</th>
+            </tr>
+            <tr>
+                <th><input type="text" id="comments7" /></th>
+                <th>
+                    <label class="head">משמרת בוקר</label><input type="checkbox" onclick="checkall(this, 7)" /><br />
+                    <label class="hour">10:00</label><input type="checkbox" class="checkbox" placeholder="10:00" name="7" /><br />
+                    <label class="hour">11:00</label><input type="checkbox" class="checkbox" placeholder="11:00" name="7" /><br />
+                    <label class="hour">12:00</label><input type="checkbox" class="checkbox" placeholder="12:00" name="7" /><br />
+                    <label class="head">:משמרת ערב</label><br />
+                    <label class="hour">18:00</label><input type="checkbox" name="eve7" class="checkbox" placeholder="18:00" /><br />
+                </th>
+                <th>שבת</th>
+            </tr>
+        </table>
+        <button type="button" id="sendShifts" onclick="sendShifts()"> שלח </button><br />
+
+    </div>
+    <script src="FirstScript.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <link rel="stylesheet" href="Common.css">
+    <title>אישור דוח</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+
+    <style>
+      th {
+    width: 20%;
+    font-size: 20px;
+    border-bottom: solid;
+    border-left: solid;
+}
+
+.TableHead{
+    font-size: 28px;
+}
+table {
+    float: left;
+    margin-top: 50px;
+    text-align: center;
+    border: solid;
+    border-bottom: none;
+    border-left: none;
+}
+    </style>
+  </head>
+  <body onload="showReports(1)">
+
+    <h1 class="main" id="headline"></h1>
+    <div class="wrap" id="confirmRep">
+            <h3 class="sub" id="rank"></h3>
+            <h2 id="numofReps"> </h2>
+
+            <br /><br />
+        
+            <label id="repnum"></label><br />
+            <table id="confirmTable">
+              <tr>
+                  <th class="TableHead">שכר למשמרת</th>
+                  <th class="TableHead">משמרת</th>
+                  <th class="TableHead">תאריך</th>
+              </tr>
+              
+              
+          </table>
+
+            <button type="button" id="btnReport" onclick="confirmRep()">לחץ לאישור הדוחות</button><br />
+
+    </div>
+    <script src="FirstScript.js"></script>
+
+
+</body>
+</html>

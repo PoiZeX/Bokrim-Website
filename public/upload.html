@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer src="/__/firebase/9.6.7/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.6.7/firebase-performance-compat.js"></script>
+        <title>העלאת משכורות</title>
+    <link rel="icon" href="logo.jpg" type="image/x-icon">
+
+
+    <link rel="stylesheet" href="Common.css">
+    <style>
+
+      div.wrap {
+          background-color: rgba(255, 255, 255, 0.6);
+          display: block;
+          float: left;
+          position: absolute;
+          margin-top: 2%;
+          margin-left: 20%;
+          margin-bottom: 10%;
+          width: 50%;
+          height: fit-content;
+          padding: 5%;
+          padding-bottom: 2%;
+      }
+
+      button {
+          width: 400px;
+      }
+  </style>
+
+  </head>
+  <body onload="welcome()">
+    <h1 class="main" id="headline"></h1>
+
+    <div class="wrap">
+        <h3 class="sub" id="rank"></h3>
+  
+            <br /><br /><br />
+            <label>בדף זה תתבצע העלאת תלושי שכר אשר נסרקו קודם לכן ע"י שירות חיצוני</label>
+            <br /><br /><br />
+            <button onclick="upload()"> לחץ כדי לפתוח את ההעלאה</button>
+
+    </div>
+    <script src="FirstScript.js"></script>
+    <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+    <script>
+        function upload(){
+            const client = filestack.init('APYpU43XvRwGj5JCrPFGDz');
+            client.picker().open();
+        }
+        
+
+    </script>
+
+</body>
+</html>
